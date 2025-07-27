@@ -1,19 +1,17 @@
-//your JS code here. If r
 function secondHighest(arr) {
   if (arr.length < 2) return -Infinity;
 
-  let max = -Infinity;
+  let first = -Infinity;
   let second = -Infinity;
 
   for (let num of arr) {
-    if (num > max) {
-      second = max;
-      max = num;
-    } else if (num < max && num > second) {
+    if (num > first) {
+      second = first;
+      first = num;
+    } else if (num < first && num > second) {
       second = num;
     }
   }
 
-  return (second === -Infinity) ? -Infinity : second;
+  return second === -Infinity ? -Infinity : second;
 }
-
